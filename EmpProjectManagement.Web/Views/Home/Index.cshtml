@@ -1,0 +1,80 @@
+﻿@model List<EmpProjectManagement.Models.EmployeeDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                @*<h1 class="m-0 text-dark"></h1>*@
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item "><a href="#"> Dashbord</a></li>
+                    <li class="breadcrumb-item active">Employee</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<section class="content">
+    <div class="container-fluid">
+
+        <div class="card">
+
+            <div class="card-body">
+                <!-- Small boxes (Stat box) -->
+
+
+                <div class="row">
+                    <div class="d-flex justify-content-between"> <a href="/home/AddEmployee" class="btn btn-block btn-primary">Add</a></div>
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-12">
+                        <table id="tbEmployee" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+
+                                    <th>Surname</th>
+
+                                    <th>Job Title</th>
+
+                                    <th>Date Of Birth</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Surname</td>
+                                        <td>@item.JobTitle</td>
+                                        @if (item.DateOfBirth.HasValue)
+                                        {
+                                            <td> @item.DateOfBirth.Value.ToString("dd MMM yyyy") </td>
+                                        }
+                                        else
+                                        {
+                                            <td></td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+  
+</section>
