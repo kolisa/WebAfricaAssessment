@@ -9,7 +9,6 @@ public class ProjectLocation
 {
     public string Message { get; set; }
     public List<Data> Data { get; set; }
-
 }
 public class Data
 {
