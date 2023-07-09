@@ -1,11 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using EmpProjectManagement.BulkFileProcess;
 using HtmlAgilityPack;
-using Newtonsoft.Json;
+
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-
+using System.Text.Json;
 
 Console.WriteLine("Large File Processing & Bulk Insertion!");
 
@@ -35,9 +34,10 @@ DataTable DownloadJsonData()
         {
             if (htmlDoc.DocumentNode != null)
             {
-
-                var ProjectLocation = JsonConvert.DeserializeObject<ProjectLocation>(htmlDoc.DocumentNode.OuterHtml);
-                dt = UtilExtensions.ToDataTable<Data>(ProjectLocation.Data);
+               
+                var projectLocation = JsonSerializer.Deserialize<ProjectLocation>(htmlDoc.DocumentNode.OuterHtml);
+             
+                 dt = UtilExtensions.ToDataTable<Data>(projectLocation.Data);
             }
         }
 
@@ -53,11 +53,12 @@ DataTable DownloadJsonData()
 }
 
 
+
 void BulkInsertion(DataTable data)
 {
     try
     {
-        string csDestination = "Data Source=***;Initial Catalog=CodeWorks;User ID=***;Password=***;Encrypt=false;TrustServerCertificate=true";
+        string csDestination = "Data Source=c0070230725-1\\MSSQLSERVER2019;Initial Catalog=CodeWorks;User ID=kolisa;Password=L@gin3;Encrypt=false;TrustServerCertificate=true";
 
         using (SqlConnection connection = new SqlConnection(csDestination))
         using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
