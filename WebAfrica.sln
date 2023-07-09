@@ -9,9 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmpProjectManagement.Api", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmpProjectManagement.Models", "EmpProjectManagement.Models\EmpProjectManagement.Models.csproj", "{DF05345B-F868-48E3-A102-D879C34BDEEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpProjectManagement.Console", "EmpProjectManagement.Console\EmpProjectManagement.Console.csproj", "{B5683A02-6552-4F8F-856B-3A2AB4382855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmpProjectManagement.Console", "EmpProjectManagement.Console\EmpProjectManagement.Console.csproj", "{B5683A02-6552-4F8F-856B-3A2AB4382855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpProjectManagement.BulkFileProcess", "EmpProjectManagement.BulkFileProcess\EmpProjectManagement.BulkFileProcess.csproj", "{F635436F-D761-4C13-897F-BA59049A7E38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmpProjectManagement.BulkFileProcess", "EmpProjectManagement.BulkFileProcess\EmpProjectManagement.BulkFileProcess.csproj", "{F635436F-D761-4C13-897F-BA59049A7E38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{358EA69A-9509-4BEB-AD8F-947A30FED6E4}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

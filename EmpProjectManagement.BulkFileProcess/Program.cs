@@ -62,7 +62,7 @@ void BulkInsertion(DataTable data)
 {
     try
     {
-        string csDestination = "Data Source=c0070230725-1\\MSSQLSERVER2019;Initial Catalog=CodeWorks;User ID=kolisa;Password=L@gin3;Encrypt=false;TrustServerCertificate=true";
+        string csDestination = "Data Source=***;Initial Catalog=CodeWorks;User ID=***;Password=***;Encrypt=false;TrustServerCertificate=true";
 
         using (SqlConnection connection = new SqlConnection(csDestination))
         using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
