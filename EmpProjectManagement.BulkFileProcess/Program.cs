@@ -23,7 +23,8 @@ DataTable DownloadJsonData()
         var urlLink = "https://www.webafrica.co.za/includes/fibregeolocation.handler.php?cmd=sources&polygon=1";
 
         var web = new HtmlWeb();
-
+        Console.WriteLine();
+        Console.WriteLine("File procesing .....");
         var htmlDoc = web.Load(urlLink);
 
         if (htmlDoc.ParseErrors != null && htmlDoc.ParseErrors.Count() > 0)
