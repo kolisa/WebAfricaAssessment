@@ -31,18 +31,18 @@ public class HomeController : Controller
         return View();
     }
     [HttpPost]
-    public async Task<IActionResult> SaveEmployee(AddEmployeeDto add)
+    public async Task<IActionResult> SaveEmployee(AddEmployeeDto model)
     {
         if (ModelState.IsValid)
         {
-           bool isSucess = await _employeeService.AddEmployee(add);
-            if(isSucess)
+            bool isSucess = await _employeeService.AddEmployee(model);
+            if (isSucess)
             {
                 return RedirectToAction(nameof(Index));
             }
 
         }
-        return RedirectToAction(nameof(AddEmployee));
+        return View(nameof(AddEmployee), model);
     }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
