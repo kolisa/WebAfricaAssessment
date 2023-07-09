@@ -21,13 +21,14 @@ DataTable DownloadJsonData()
     DataTable dt = new DataTable("Data");
     try
     {
-        var urlLink = "https://www.webafrica.co.za/includes/fibregeolocation.handler.php?cmd=sources&polygon=1"; 
+        var urlLink = "https://www.webafrica.co.za/includes/fibregeolocation.handler.php?cmd=sources&polygon=1";
 
-        var web = new HtmlWeb(); 
+        var web = new HtmlWeb();
 
-        var htmlDoc = web.Load(urlLink); 
-        
-        if (htmlDoc.ParseErrors != null && htmlDoc.ParseErrors.Count() > 0) { 
+        var htmlDoc = web.Load(urlLink);
+
+        if (htmlDoc.ParseErrors != null && htmlDoc.ParseErrors.Count() > 0)
+        {
             return dt;
         }
         else
