@@ -11,8 +11,8 @@ Console.WriteLine("Large File Processing & Bulk Insertion!");
 
 var data = DownloadJsonData();
 BulkInsertion(data);
-
-Console.Write("File Processing Completed!!!");
+Console.WriteLine();
+Console.WriteLine("File Processing Completed!!!");
 
 Console.ReadLine();
 
@@ -21,23 +21,17 @@ DataTable DownloadJsonData()
     DataTable dt = new DataTable("Data");
     try
     {
-        var urlLink = "https://www.webafrica.co.za/includes/fibregeolocation.handler.php?cmd=sources&polygon=1"; // 1. Specify url where the json is to read. 
+        var urlLink = "https://www.webafrica.co.za/includes/fibregeolocation.handler.php?cmd=sources&polygon=1"; 
 
-        var web = new HtmlWeb(); // Init the HTMl Web
+        var web = new HtmlWeb(); 
 
-
-        var htmlDoc = web.Load(urlLink); // Load our url
-
-        // ParseErrors is an ArrayList containing any errors from the Load statement
-        if (htmlDoc.ParseErrors != null && htmlDoc.ParseErrors.Count() > 0)
-        {
-            // Handle any parse errors as required
+        var htmlDoc = web.Load(urlLink); 
+        
+        if (htmlDoc.ParseErrors != null && htmlDoc.ParseErrors.Count() > 0) { 
             return dt;
-
         }
         else
         {
-
             if (htmlDoc.DocumentNode != null)
             {
 
